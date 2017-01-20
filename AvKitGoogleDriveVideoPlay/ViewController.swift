@@ -10,12 +10,17 @@
 import UIKit
 import AVKit
 import AVFoundation
+import Alamofire
+import AlamofireNetworkActivityIndicator
+import SwiftyJSON
+
+
 
 class ViewController: UIViewController, AVPlayerItemOutputPullDelegate, UITableViewDelegate, UITableViewDataSource {
     
     
-    let iconTitle = ["Atem Tutem Men Seni", "Çamlıbel'den Çıktım Yayan", "Dandini Dandini Danalı Bebek", "Eşekli Ninni", "Uyusun da Büyüsün Ninni"]
-    let videoIDs = ["0B-lXPBlVFnehd3dDbkw5M3JTZzA", "0B-lXPBlVFnehQ0pYQUhsUW5oWVE","0B-lXPBlVFnehYlN3OEtabGFTVjg","0B-lXPBlVFnehRWNuNTNCM1ppMWc","0B-lXPBlVFneha3RZYUE1ekd4YUE"]
+    let iconTitle = ["Atem Tutem Men Seni", "Dandini Dandini Danalı Bebek", "Eşekli Ninni", "Uyusun da Büyüsün Ninni"]
+    let videoIDs = ["0B-lXPBlVFnehd3dDbkw5M3JTZzA","0B-lXPBlVFnehYlN3OEtabGFTVjg","0B-lXPBlVFnehRWNuNTNCM1ppMWc","0B-lXPBlVFneha3RZYUE1ekd4YUE"]
     
     let control = AVPlayerViewController()
     var player:AVPlayer!
@@ -59,18 +64,30 @@ class ViewController: UIViewController, AVPlayerItemOutputPullDelegate, UITableV
         self.sureNesne.maximumValue = 0
         self.sureNesne.minimumValue = 0
         self.sureNesne.value = 0
-        DispatchQueue.global().async {
-            self.control.player?.pause()
-            let url = URL(string: "https://drive.google.com/uc?export=download&id=\(driveVideoID)")
-            print("https://drive.google.com/uc?export=download&id=\(driveVideoID)")
-            self.player = AVPlayer(url: url!)
-            self.control.player = self.player
-            self.control.player?.play()
-            self.control.player?.volume = self.userSoundVal
-            self.videoStatus = true
-            self.sesSeviyeNesne.value = self.userSoundVal
-            self.sesSeviyeLbl.text = "% \(Int((self.userSoundVal) * 100))"
-            self.sureNesne.maximumValue = Float((self.control.player?.currentItem?.asset.duration.seconds)!)
+        /*
+        DispatchQueue.global(qos: .background).async {
+            DispatchQueue.main.async {
+        }}
+        print("https://drive.google.com/uc?export=download&id=\(driveVideoID)")
+         */
+        Alamofire.request("http://api.getlinkdrive.com/getlink?url=https://drive.google.com/file/d/\(driveVideoID)/view").responseJSON { response in
+            if let jdata = response.result.value {
+               let json = JSON(jdata)
+               let sourURL = json[1]["src"].string
+                DispatchQueue.global().async {
+                self.control.player?.pause()
+                let url = URL(string: sourURL!)
+                let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
+                self.player = AVPlayer(playerItem: playerItem)
+                self.control.player = self.player
+                self.control.player?.play()
+                self.control.player?.volume = self.userSoundVal
+                self.videoStatus = true
+                self.sesSeviyeNesne.value = self.userSoundVal
+                self.sesSeviyeLbl.text = "% \(Int((self.userSoundVal) * 100))"
+                self.sureNesne.maximumValue = Float((self.control.player?.currentItem?.asset.duration.seconds)!)
+                }
+            }
         }
     }
     
@@ -172,6 +189,7 @@ class ViewController: UIViewController, AVPlayerItemOutputPullDelegate, UITableV
     
     
     @IBAction func fncBasaSar(_ sender: UIButton) {
+        videoStatus = true
         if self.control.isReadyForDisplay {
             let seekTime : CMTime = CMTimeMake(Int64(0), Int32(1))
             self.control.player!.seek(to: seekTime)

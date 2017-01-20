@@ -1,0 +1,6 @@
+framework module Pods_AvKitGoogleDriveVideoPlay {
+  umbrella header "Pods-AvKitGoogleDriveVideoPlay-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AudioToolbox
+import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         AVAudioSession.sharedInstance()
+        NetworkActivityIndicatorManager.shared.isEnabled = true
         
         //     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
 /*

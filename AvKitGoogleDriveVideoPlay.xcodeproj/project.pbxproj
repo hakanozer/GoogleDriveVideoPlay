@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31366E87BBE621F2D74423F5 /* Pods_AvKitGoogleDriveVideoPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE201C60A4DAEEF7951C65F6 /* Pods_AvKitGoogleDriveVideoPlay.framework */; };
 		FF65740E1E183E4200DFA3C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65740D1E183E4200DFA3C0 /* AppDelegate.swift */; };
 		FF6574101E183E4200DFA3C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65740F1E183E4200DFA3C0 /* ViewController.swift */; };
 		FF6574131E183E4200DFA3C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6574111E183E4200DFA3C0 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58A74A0CC6D1F151547B9CAC /* Pods-AvKitGoogleDriveVideoPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvKitGoogleDriveVideoPlay.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvKitGoogleDriveVideoPlay/Pods-AvKitGoogleDriveVideoPlay.release.xcconfig"; sourceTree = "<group>"; };
+		7FCE0A8CA51EEB83D68655CE /* Pods-AvKitGoogleDriveVideoPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvKitGoogleDriveVideoPlay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvKitGoogleDriveVideoPlay/Pods-AvKitGoogleDriveVideoPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		BE201C60A4DAEEF7951C65F6 /* Pods_AvKitGoogleDriveVideoPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvKitGoogleDriveVideoPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF65740A1E183E4200DFA3C0 /* AvKitGoogleDriveVideoPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvKitGoogleDriveVideoPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF65740D1E183E4200DFA3C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF65740F1E183E4200DFA3C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31366E87BBE621F2D74423F5 /* Pods_AvKitGoogleDriveVideoPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80545F9155EA50EE4AF34725 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE201C60A4DAEEF7951C65F6 /* Pods_AvKitGoogleDriveVideoPlay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB780CC4B2AE14EC3130E871 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FCE0A8CA51EEB83D68655CE /* Pods-AvKitGoogleDriveVideoPlay.debug.xcconfig */,
+				58A74A0CC6D1F151547B9CAC /* Pods-AvKitGoogleDriveVideoPlay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FF6574011E183E4100DFA3C0 = {
 			isa = PBXGroup;
 			children = (
 				FF65740C1E183E4200DFA3C0 /* AvKitGoogleDriveVideoPlay */,
 				FF65740B1E183E4200DFA3C0 /* Products */,
+				EB780CC4B2AE14EC3130E871 /* Pods */,
+				80545F9155EA50EE4AF34725 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF65741C1E183E4200DFA3C0 /* Build configuration list for PBXNativeTarget "AvKitGoogleDriveVideoPlay" */;
 			buildPhases = (
+				EB22DC138BBBBA1808DD3503 /* [CP] Check Pods Manifest.lock */,
 				FF6574061E183E4100DFA3C0 /* Sources */,
 				FF6574071E183E4100DFA3C0 /* Frameworks */,
 				FF6574081E183E4100DFA3C0 /* Resources */,
+				26A35DFBC70A8D06F44CBCF2 /* [CP] Embed Pods Frameworks */,
+				E016107608878ECD71635691 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26A35DFBC70A8D06F44CBCF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AvKitGoogleDriveVideoPlay/Pods-AvKitGoogleDriveVideoPlay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E016107608878ECD71635691 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AvKitGoogleDriveVideoPlay/Pods-AvKitGoogleDriveVideoPlay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB22DC138BBBBA1808DD3503 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF6574061E183E4100DFA3C0 /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		FF65741D1E183E4200DFA3C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FCE0A8CA51EEB83D68655CE /* Pods-AvKitGoogleDriveVideoPlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8ZY239GG83;
@@ -272,6 +348,7 @@
 		};
 		FF65741E1E183E4200DFA3C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58A74A0CC6D1F151547B9CAC /* Pods-AvKitGoogleDriveVideoPlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8ZY239GG83;

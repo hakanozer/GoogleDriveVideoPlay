@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>Arkaplanda Çalışma</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -24,8 +20,53 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>${PRODUCT_NAME} Music Usage</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>${PRODUCT_NAME} BluetoothPeripheral</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>${PRODUCT_NAME} Calendar Usage</string>
+	<key>NSCameraUsageDescription</key>
+	<string>${PRODUCT_NAME} Camera Usage</string>
+	<key>NSContactsUsageDescription</key>
+	<string>${PRODUCT_NAME} Contact fetch</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>${PRODUCT_NAME} Helth Description</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>${PRODUCT_NAME} Helth Updates</string>
+	<key>NSHomeKitUsageDescription</key>
+	<string>${PRODUCT_NAME} HomeKit Usage</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>${PRODUCT_NAME} Always Location get</string>
+	<key>NSLocationUsageDescription</key>
+	<string>${PRODUCT_NAME} Location Updates</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>${PRODUCT_NAME} WhenInUse Location</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>${PRODUCT_NAME} Microphone Usage</string>
+	<key>NSMotionUsageDescription</key>
+	<string>${PRODUCT_NAME} Motion Usage</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>${PRODUCT_NAME} PhotoLibrary Usage</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>${PRODUCT_NAME} Reminder Usage</string>
+	<key>NSSiriUsageDescription</key>
+	<string>${PRODUCT_NAME} Siri Usage</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>${PRODUCT_NAME} Speech Recognition Usage</string>
+	<key>NSVideoSubscriberAccountUsageDescription</key>
+	<string>${PRODUCT_NAME} Video Subscribe Usage</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>Arkaplanda Çalışma</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>Main</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -43,5 +84,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>kTCCServiceMediaLibrary</key>
+	<string>${PRODUCT_NAME} MediaLibrary Usage</string>
 </dict>
 </plist>
